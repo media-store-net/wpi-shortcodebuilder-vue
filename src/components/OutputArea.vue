@@ -2,10 +2,20 @@
   <div id="wrapper">
     <h3>Ausgabe:</h3>
     <div v-if="clipped" class="succes">{{ clipped }}</div>
-    <div>
-      <input type="text" id="output-filed" name="output-field" :value="content"
-             @change="onValueChange"/>
-      <a id="copy" @click="toClipboard">To Clipboard</a>
+    <div class="input-group">
+      <input type="text" id="output-filed" name="output-field" class="form-control"
+             :value="content"
+             @change="onValueChange" />
+      <div class="input-group-append">
+        <div class="input-group-text">
+          <a href="#" @click="toClipboard">
+            <svg class="bi bi-documents" width="1.5em" height="1.4em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M5 4h8a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2zm0 1a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V6a1 1 0 00-1-1H5z" clip-rule="evenodd"></path>
+              <path d="M7 2h8a2 2 0 012 2v10a2 2 0 01-2 2v-1a1 1 0 001-1V4a1 1 0 00-1-1H7a1 1 0 00-1 1H5a2 2 0 012-2z"></path>
+            </svg>
+            Clip</a>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -51,29 +61,22 @@ export default {
     text-align: left;
     background: #eee;
   }
-
-  input {
-    line-height: 2;
-    padding: 5px 10px;
-    border-radius: 5px 0 0 5px;
-    border: 1px solid #ccc;
-    width: 80%;
+  .input-group-append {
+    margin: 1em 0 0;
+    padding: 0;
+  }
+  .input-group-text {
+    padding: .375rem .75rem;
   }
 
-  #copy {
-    display: inline-block;
-    width: 15%;
-    line-height: 2;
-    padding: 2px 10px 3px 10px;
-    background: #58a6bb;
-    color: #f8f8f8;
-    border: 1px solid #ccc;
-    border-radius: 0 5px 5px 0;
-    vertical-align: top;
+  a {
+    color: #333;
+    display: block;
   }
 
-  #copy:hover {
+  a:hover {
     cursor: pointer;
+    text-decoration: none;
   }
 
   .succes {

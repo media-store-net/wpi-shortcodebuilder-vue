@@ -1,15 +1,17 @@
 <template>
-    <div id="wrapper" v-if="withInput">
-      <h3>Eingabe-Optionen</h3>
+    <div id="wrapper" class="row" v-if="withInput">
+      <h3 class="col-12">Eingabe-Optionen</h3>
       <component :is="contentCmp"></component>
     </div>
 </template>
 
 <script>
 import FilterInputCmp from './FilterInputCmp'
+import QueryInputCmp from './QueryInputCmp'
+
 export default {
   name: 'InputArea',
-  components: { FilterInputCmp },
+  components: { FilterInputCmp, QueryInputCmp },
   props: ['withInput', 'contentCmp']
 }
 </script>
@@ -22,5 +24,8 @@ export default {
     padding: 15px;
     background: inherit;
     text-align: left;
+  }
+  h3 {
+    padding-left: 0;
   }
 </style>

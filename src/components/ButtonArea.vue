@@ -1,7 +1,8 @@
 <template>
-  <div id="wrapper">
-    <h2>Wähle eine Option</h2>
+  <div id="wrapper" class="row">
+    <h2 class="col-12">Wähle eine Option</h2>
     <ButtonCmp
+      class="col"
       v-for="btn in buttons"
       :btn="btn"
       :key="btn.id"
@@ -38,7 +39,8 @@ export default {
         ),
         new Button(
           4, 'Shortcode für ein Immobilien Query', 'Immobilien-Query', true, {
-            name: 'Query'
+            name: 'QueryInputCmp',
+            cmpPath: './QueryInputCmp'
           }
         ),
         new Button(

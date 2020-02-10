@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
     <Header msg="Shortcode Builder © WP Immo Manager" />
     <ButtonArea />
     <InputArea :with-input="withInput" :content-cmp="inputContent.name"/>
@@ -107,5 +107,16 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 30px;
+}
+label {
+  display: block;
+}
+input, select {
+  margin: 1em 0;
+  line-height: 2;
+  width: 97%;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 </style>
