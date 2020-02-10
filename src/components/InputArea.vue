@@ -1,7 +1,7 @@
 <template>
     <div id="wrapper" v-if="withInput">
       <h3>Eingabe-Optionen</h3>
-      <div><FilterInputCmp /></div>
+      <component :is="contentCmp"></component>
     </div>
 </template>
 

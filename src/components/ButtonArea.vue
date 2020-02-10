@@ -29,7 +29,8 @@ export default {
         ),
         new Button(
           2, 'Shortcode für die Erweiterte Suchfilter-Maske', 'Suchfilter-Advanced', true, {
-            name: 'Suchfilter'
+            name: 'FilterInputCmp',
+            cmpPath: './FilterInputCmp'
           }
         ),
         new Button(

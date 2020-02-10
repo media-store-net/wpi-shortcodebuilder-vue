@@ -2,7 +2,7 @@
   <div id="app">
     <Header msg="Shortcode Builder © WP Immo Manager" />
     <ButtonArea />
-    <InputArea :with-input="withInput" :content-cmp="inputContent"/>
+    <InputArea :with-input="withInput" :content-cmp="inputContent.name"/>
     <OutputArea :content="genarateOutput" />
   </div>
 </template>
