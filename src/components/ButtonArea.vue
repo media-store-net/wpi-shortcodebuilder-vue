@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper" class="row">
+  <div id="wrapper" class="row card-content">
     <h2 class="col-12">Wähle eine Option</h2>
     <ButtonCmp
       class="col"
@@ -23,28 +23,28 @@ export default {
     return {
       buttons: [
         new Button(
-          1, 'Shortcode für die Suchfilter-Maske', 'Suchfilter', true, {
-            name: 'FilterInputCmp',
-            cmpPath: './FilterInputCmp'
-          }
-        ),
-        new Button(
-          2, 'Shortcode für die Erweiterte Suchfilter-Maske', 'Suchfilter-Advanced', true, {
-            name: 'FilterInputCmp',
-            cmpPath: './FilterInputCmp'
-          }
-        ),
-        new Button(
-          3, 'Shortcode für die Suchergebnisse', 'Suchergebnisse', false
-        ),
-        new Button(
-          4, 'Shortcode für ein Immobilien Query', 'Immobilien-Query', true, {
+          1, 'Shortcode für ein Immobilien Query', 'Immobilien-Query', true, {
             name: 'QueryInputCmp',
             cmpPath: './QueryInputCmp'
           }
         ),
         new Button(
-          5, 'Shortcode für die Umkreissuche', 'Umkreissuche', false
+          2, 'Shortcode für die Suchfilter-Maske', 'Suchfilter', true, {
+            name: 'FilterInputCmp',
+            cmpPath: './FilterInputCmp'
+          }
+        ),
+        new Button(
+          3, 'Shortcode für die Erweiterte Suchfilter-Maske', 'Suchfilter-Advanced', true, {
+            name: 'FilterInputCmp',
+            cmpPath: './FilterInputCmp'
+          }
+        ),
+        new Button(
+          4, 'Shortcode für die Umkreissuche', 'Umkreissuche', false
+        ),
+        new Button(
+          5, 'Shortcode für die Suchergebnisse', 'Suchergebnisse', false
         )
       ]
     }
@@ -60,4 +60,7 @@ export default {
     padding: 15px;
     background: #eee;
   }
+    h2 {
+        margin-bottom: 2rem;
+    }
 </style>

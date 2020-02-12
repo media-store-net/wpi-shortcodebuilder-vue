@@ -1,10 +1,12 @@
 <template>
-  <div id="app" class="container">
-    <Header msg="Shortcode Builder © WP Immo Manager" />
-    <ButtonArea />
-    <InputArea :with-input="withInput" :content-cmp="inputContent.name"/>
-    <OutputArea :content="genarateOutput" />
-  </div>
+    <div id="app" class="container">
+        <Header msg="Shortcode Builder © WP Immo Manager"/>
+        <ButtonArea/>
+        <transition name="fade">
+            <InputArea :with-input="withInput" :content-cmp="inputContent.name"/>
+        </transition>
+        <OutputArea :content="genarateOutput"/>
+    </div>
 </template>
 
 <script>
@@ -30,6 +32,7 @@ export default {
       withInput: false,
       inputContent: {},
       filterBtn: '',
+      queryData: {},
       outputContent: ''
     }
   },
@@ -61,7 +64,6 @@ export default {
           }
           const value1 = this.stringFromArray(filterArray)
           this.setOutput(value1)
-          filterArray = []
           break
         case 'suchfilter-advanced' :
           filterArray = ['search_advanced']
@@ -76,7 +78,14 @@ export default {
           this.setOutput('search_filter_result')
           break
         case 'immobilien-query' :
-          this.setOutput('immobilien')
+          filterArray = ['immobilien']
+          if (this.queryData) {
+            for (const item in this.queryData) {
+              filterArray.push(this.queryData[item])
+            }
+          }
+          const value3 = this.stringFromArray(filterArray)
+          this.setOutput(value3)
           break
         case 'umkreissuche' :
           this.setOutput('umkreissuche')
@@ -95,28 +104,53 @@ export default {
     eventBus.$on('onFilterInput', (data) => {
       this.filterBtn = data
     })
+    eventBus.$on('onQueryInput', (data) => {
+      this.queryData = Object.entries(data).reduce((a, [k, v]) => (v ? {
+        ...a,
+        [k]: v
+      } : a), {})
+      console.log('onQueryInput Event', data)
+    })
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 30px;
-}
-label {
-  display: block;
-}
-input, select {
-  margin: 1em 0;
-  line-height: 2;
-  width: 97%;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+    #app {
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 30px;
+    }
+
+    label {
+        display: block;
+    }
+
+    input, select {
+        margin: 1em 0;
+        line-height: 2;
+        width: 97%;
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .fade-enter {
+        opacity: 0;
+    }
+
+    .fade-enter-active {
+        transition: opacity 1s;
+    }
+
+    .fade-leave {
+    }
+
+    .fade-leave-active {
+        transition: opacity 1s;
+        opacity: 0;
+    }
 </style>

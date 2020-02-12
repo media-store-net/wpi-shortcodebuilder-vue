@@ -25,7 +25,7 @@ export default {
 
 <style scoped>
   #content {
-    margin: 2em 0;
+    margin: 2rem 0;
     padding: 15px 0;
     background: inherit;
     text-align: left;

@@ -27,5 +27,6 @@ export default {
   }
   h3 {
     padding-left: 0;
+      margin-bottom: 2rem;
   }
 </style>

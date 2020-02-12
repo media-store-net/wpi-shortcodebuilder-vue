@@ -9,6 +9,9 @@ export const eventBus = new Vue({
     },
     onFilterInput (value) {
       this.$emit('onFilterInput', value)
+    },
+    onQueryInput (data) {
+      this.$emit('onQueryInput', data)
     }
   }
 })

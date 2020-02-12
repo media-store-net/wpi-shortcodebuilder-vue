@@ -1,5 +1,7 @@
 <template>
-  <button :title="btn.title" @click="onClick(btn)">{{btn.text}}</button>
+    <button :title="btn.title" @click="onClick(btn)"
+            class="btn btn-outline-info">{{btn.text}}
+    </button>
 </template>
 
 <script>
@@ -17,18 +19,12 @@ export default {
 </script>
 
 <style scoped>
-  button {
-    background: #f8f8f8;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 10px 15px;
-    padding: 10px 20px;
-  }
+    button {
+        background: #f8f8f8;
+        margin: 5px;
+    }
 
-  button:hover {
-    background: #58a6bb;
-    color: #f8f8f8;
-    border: 1px solid #f8f8f8;
-    cursor: pointer;
-  }
+    button:hover {
+        cursor: pointer;
+    }
 </style>
