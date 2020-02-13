@@ -22,10 +22,11 @@ Plugins verfügbar zu machen.
 ### Links
 Die wichtigsten Links in Übersicht
 
-- [WP Immo Manager Pro](https://media-store.net/wp-immo-manager-landingpage/)
-- [WP Immo Manager FAQ](https://media-store.net/wp-immo-manager-faq/)
-- [WP Immo Manager Doku](https://media-store.net/docs/wp-immo-manager/)
-- [Support Ticket System](https://media-store.net/support-ticket/)
+- [Shortcode Builder für WP Immo Manager](https://shortcodebuilder.wp-immo-manager.de)
+- [WP Immo Manager Pro](https://media-store.net/wp-immo-manager-landingpage)
+- [WP Immo Manager FAQ](https://media-store.net/wp-immo-manager-faq)
+- [WP Immo Manager Doku](https://media-store.net/docs/wp-immo-manager)
+- [Support Ticket System](https://media-store.net/support-ticket)
 
 ### Licence
 Lizenz [MIT](https://opensource.org/licenses/MIT)
