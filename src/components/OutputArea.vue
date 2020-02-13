@@ -41,9 +41,7 @@ export default {
     },
     toClipboard: function (event) {
       event.preventDefault()
-      console.log('copy to Clipboard...')
       navigator.clipboard.writeText(this.content).then(() => {
-        // TODO clipped Div Animation...
         this.clipped = 'Der Text wurde kopiert'
         this.onClip()
       })

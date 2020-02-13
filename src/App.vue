@@ -98,7 +98,6 @@ export default {
   },
   created () {
     eventBus.$on('buttonClicked', (data) => {
-      console.log('$on: buttonClicked')
       this.optionSelected(data)
     })
     eventBus.$on('onFilterInput', (data) => {
@@ -109,7 +108,6 @@ export default {
         ...a,
         [k]: v
       } : a), {})
-      console.log('onQueryInput Event', data)
     })
   }
 }
