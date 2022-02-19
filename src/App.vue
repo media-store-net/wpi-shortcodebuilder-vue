@@ -1,27 +1,26 @@
 <template>
-    <div id="app" class="container">
-        <Header msg="Shortcode Builder © WP Immo Manager"/>
-        <ButtonArea/>
-        <transition name="fade">
-            <InputArea :with-input="withInput" :content-cmp="inputContent.name"/>
-        </transition>
-        <OutputArea :content="genarateOutput"/>
-    </div>
+  <div id="app" class="container">
+    <SiteHeader msg="Shortcode Builder © WP Immo Manager"/>
+    <ButtonArea/>
+    <transition name="fade">
+      <InputArea :with-input="withInput" :content-cmp="inputContent.name"/>
+    </transition>
+    <OutputArea :content="genarateOutput"/>
+  </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import Header from './components/Header'
-import ButtonArea from './components/ButtonArea'
-import InputArea from './components/InputArea'
-import OutputArea from './components/OutputArea'
-import { eventBus } from './eventBus'
+import SiteHeader from '@/components/SiteHeader'
+import ButtonArea from '@/components/ButtonArea'
+import InputArea from '@/components/InputArea'
+import OutputArea from '@/components/OutputArea'
+import { eventBus } from '@/eventBus'
 
 export default {
   name: 'app',
   components: {
-    // HelloWorld,
-    Header,
+    SiteHeader,
     ButtonArea,
     InputArea,
     OutputArea
@@ -114,41 +113,41 @@ export default {
 </script>
 
 <style>
-    #app {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-        margin-top: 30px;
-    }
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 30px;
+}
 
-    label {
-        display: block;
-    }
+label {
+  display: block;
+}
 
-    input, select {
-        margin: 1em 0;
-        line-height: 2;
-        width: 97%;
-        padding: 5px 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
+input, select {
+  margin: 1em 0;
+  line-height: 2;
+  width: 97%;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
-    .fade-enter {
-        opacity: 0;
-    }
+.fade-enter {
+  opacity: 0;
+}
 
-    .fade-enter-active {
-        transition: opacity 1s;
-    }
+.fade-enter-active {
+  transition: opacity 1s;
+}
 
-    .fade-leave {
-    }
+.fade-leave {
+}
 
-    .fade-leave-active {
-        transition: opacity 1s;
-        opacity: 0;
-    }
+.fade-leave-active {
+  transition: opacity 1s;
+  opacity: 0;
+}
 </style>
