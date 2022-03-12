@@ -29,22 +29,28 @@ export default {
           }
         ),
         new Button(
-          2, 'Shortcode für die Suchfilter-Maske', 'Suchfilter', true, {
+          2, 'Shortcode für die Suchergebnisse', 'Suchergebnisse', false
+        ),
+        new Button(
+          3, 'Shortcode für die Suchfilter-Maske', 'Suchfilter', true, {
             name: 'FilterInputCmp',
             cmpPath: './FilterInputCmp'
           }
         ),
         new Button(
-          3, 'Shortcode für die Erweiterte Suchfilter-Maske', 'Suchfilter-Advanced', true, {
+          4, 'Shortcode für die Erweiterte Suchfilter-Maske', 'Suchfilter-Advanced', true, {
             name: 'FilterInputCmp',
             cmpPath: './FilterInputCmp'
           }
         ),
         new Button(
-          4, 'Shortcode für die Umkreissuche', 'Umkreissuche', false
+          5, 'Shortcode für die Umkreissuche', 'Umkreissuche', false
         ),
         new Button(
-          5, 'Shortcode für die Suchergebnisse', 'Suchergebnisse', false
+          6, 'Shortcode für die Erweiterte Umkreissuche', 'Umkreissuche Advanced', true, {
+            name: 'FilterInputCmp',
+            cmpPath: './FilterInputCmp'
+          }
         )
       ]
     }

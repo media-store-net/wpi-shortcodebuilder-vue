@@ -10,7 +10,6 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 import SiteHeader from '@/components/SiteHeader'
 import ButtonArea from '@/components/ButtonArea'
 import InputArea from '@/components/InputArea'
@@ -88,6 +87,15 @@ export default {
           break
         case 'umkreissuche' :
           this.setOutput('umkreissuche')
+          break
+        case 'umkreissuche advanced' :
+          filterArray = ['umkreissuche_advanced']
+          if (this.filterBtn.length) {
+            filterArray.push('btn_text="')
+            filterArray.push(this.filterBtn + '"')
+          }
+          const value4 = this.stringFromArray(filterArray)
+          this.setOutput(value4)
           break
         default :
           this.setOutput('Noch keine Option gewählt')
