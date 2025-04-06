@@ -14,10 +14,10 @@
 import { defineComponent } from 'vue'
 import { eventBus } from '@/eventBus'
 
-import SiteHeader from '@/components/SiteHeader'
-import ButtonArea from '@/components/ButtonArea'
-import InputArea from '@/components/InputArea'
-import OutputArea from '@/components/OutputArea'
+import SiteHeader from '@/components/SiteHeader.vue'
+import ButtonArea from '@/components/ButtonArea.vue'
+import InputArea from '@/components/InputArea.vue'
+import OutputArea from '@/components/OutputArea.vue'
 import {ButtonData, InputContent, QueryData} from '@/interfaces/Interfaces'
 
 
