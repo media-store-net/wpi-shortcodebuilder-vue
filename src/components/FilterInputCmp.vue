@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { eventBus } from '../eventBus'
+import { eventBus } from '@/eventBus'
 
 export default {
   name: 'FilterInputCmp',
@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     emitValue (event) {
-      eventBus.onFilterInput(event.target.value)
+      eventBus.emit('onFilterInput', event.target.value)
     }
   }
 }

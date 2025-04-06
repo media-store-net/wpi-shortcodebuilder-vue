@@ -3,15 +3,16 @@ module.exports = {
   env: {
     node: true
   },
-  'extends': [
-    'plugin:vue/essential',
-    '@vue/standard'
+  extends: [
+    'plugin:vue/vue3-essential',
+    '@vue/eslint-config-typescript'
   ],
-  rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
-  },
   parserOptions: {
-    'requireConfigFile': false
+    ecmaVersion: 2020,
+    parser: '@typescript-eslint/parser'
+  },
+  rules: {
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
   }
 }

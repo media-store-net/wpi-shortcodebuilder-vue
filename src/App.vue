@@ -9,14 +9,19 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+// Neue Imports für Vue 3
+import { defineComponent } from 'vue'
+import { eventBus } from '@/eventBus'
+
 import SiteHeader from '@/components/SiteHeader'
 import ButtonArea from '@/components/ButtonArea'
 import InputArea from '@/components/InputArea'
 import OutputArea from '@/components/OutputArea'
-import { eventBus } from '@/eventBus'
+import {ButtonData, InputContent, QueryData} from '@/interfaces/Interfaces'
 
-export default {
+
+export default defineComponent({
   name: 'app',
   components: {
     SiteHeader,
@@ -103,21 +108,21 @@ export default {
       return this.outputContent
     }
   },
-  created () {
-    eventBus.$on('buttonClicked', (data) => {
+  created() {
+    eventBus.on('buttonClicked', (data) => {
       this.optionSelected(data)
     })
-    eventBus.$on('onFilterInput', (data) => {
+    eventBus.on('onFilterInput', (data) => {
       this.filterBtn = data
     })
-    eventBus.$on('onQueryInput', (data) => {
+    eventBus.on('onQueryInput', (data) => {
       this.queryData = Object.entries(data).reduce((a, [k, v]) => (v ? {
         ...a,
         [k]: v
       } : a), {})
     })
   }
-}
+});
 </script>
 
 <style>
