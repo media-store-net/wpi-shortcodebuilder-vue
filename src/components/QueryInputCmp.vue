@@ -141,7 +141,7 @@
 </template>
 
 <script>
-import { eventBus } from '../eventBus'
+import { eventBus } from '@/eventBus'
 
 export default {
   'name': 'QueryInputCmp',
@@ -186,7 +186,7 @@ export default {
       result.style = this.formData.style.length ? `style=${this.formData.style}` : null
       this.result = result
 
-      eventBus.onQueryInput(this.result)
+      eventBus.emit('onQueryInput',this.result);
     },
     onResetData: function (event) {
       event.preventDefault()

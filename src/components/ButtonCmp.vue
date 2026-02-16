@@ -5,14 +5,15 @@
 </template>
 
 <script>
-import { eventBus } from '../eventBus'
+import { eventBus } from '@/eventBus'
 
 export default {
   name: 'ButtonCmp',
   props: ['btn'],
   methods: {
     onClick (btn) {
-      eventBus.onButtonClicked(btn)
+      eventBus.emit('buttonClicked', btn)
+
     }
   }
 }
