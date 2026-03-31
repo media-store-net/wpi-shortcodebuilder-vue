@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-12 col-sm-4">
                     <label>Sortierung</label>
-                    <select class="form-control" v-model="formData.sorting">
+                    <select class="form-control" v-model="formData.order">
                         <option value="">---</option>
                         <option value="DESC">Aufsteigend</option>
                         <option value="ASC">Absteigend</option>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-12 col-sm-4">
                     <label>Sortiere nach</label>
-                    <select class="form-control" v-model="formData.sortby">
+                    <select class="form-control" v-model="formData.orderby">
                         <option value="">---</option>
                         <option value="ID">ID</option>
                         <option value="Author">Autor</option>
@@ -151,8 +151,8 @@ export default {
         'post_id': '',
         'object_nr': '',
         'anzahl': '',
-        'sorting': '',
-        'sortby': '',
+        'order': '',
+        'orderby': '',
         'vermarktung': [],
         'objekttyp': [],
         'relation': '',
@@ -174,8 +174,8 @@ export default {
       } else {
         // all ather multiselect items
         result.anzahl = this.formData.anzahl.length ? `anzahl=${this.formData.anzahl}` : null
-        result.sorting = this.formData.sorting.length ? `sort=${this.formData.sorting}` : null
-        result.sortby = this.formData.sortby.length ? `sortby=${this.formData.sortby}` : null
+        result.order = this.formData.order.length ? `sort=${this.formData.order}` : null
+        result.orderby = this.formData.orderby.length ? `orderby=${this.formData.orderby}` : null
         result.vermarktung = this.formData.vermarktung.length ? `vermarktung=${this.formData.vermarktung}` : null
         result.objekttyp = this.formData.objekttyp.length ? `objekttyp=${this.formData.objekttyp}` : null
         result.relation = this.formData.relation.length ? `relation=${this.formData.relation}` : null
