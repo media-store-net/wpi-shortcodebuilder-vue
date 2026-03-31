@@ -39,6 +39,7 @@
                     <select class="form-control" v-model="formData.orderby">
                         <option value="">---</option>
                         <option value="ID">ID</option>
+                        <option value="objekt_id">Objekt-ID</option>
                         <option value="Author">Autor</option>
                         <option value="Title">Titel</option>
                         <option value="Name">Name</option>
