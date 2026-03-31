@@ -174,7 +174,7 @@ export default {
       } else {
         // all ather multiselect items
         result.anzahl = this.formData.anzahl.length ? `anzahl=${this.formData.anzahl}` : null
-        result.order = this.formData.order.length ? `sort=${this.formData.order}` : null
+        result.order = this.formData.order.length ? `order=${this.formData.order}` : null
         result.orderby = this.formData.orderby.length ? `orderby=${this.formData.orderby}` : null
         result.vermarktung = this.formData.vermarktung.length ? `vermarktung=${this.formData.vermarktung}` : null
         result.objekttyp = this.formData.objekttyp.length ? `objekttyp=${this.formData.objekttyp}` : null
